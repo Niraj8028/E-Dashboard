@@ -12,6 +12,10 @@ app.post('/register',async(req,res)=>{
     let result=await user.save();
     res.send(result)
 })
+app.post('/login',async(req,res)=>{
+    let user=await User.findOne(req.body);
+    res.send(user);
+})
 app.get('/',(req,res)=>{    
     res.send("Success")
 })
